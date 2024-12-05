@@ -576,8 +576,8 @@ def amendments_quiz():
 
     score = 0
     print("\nWelcome to the Amendments Quiz!")
-    print("You will be given 10 descriptions of amendments. Your task is to enter the amendment number that matches the description.\n")
-    for _ in range(10):  # Ask 10 random questions
+    print("You will be given 27 descriptions of amendments. Your task is to enter the amendment number that matches the description.\n")
+    for _ in range(27):  # Ask 27 random questions
         amendment, description = random.choice(list(amendments.items()))
         try:
             answer = int(input(f"Which amendment is described as: \"{description}\"? Enter the amendment number: "))
@@ -588,10 +588,10 @@ def amendments_quiz():
                 print(f"Wrong! The correct answer is Amendment {amendment}.")
         except ValueError:
             print("Invalid input! Please enter a number.")
-    print(f"\nYour final score: {score}/10")
-    if score == 10:
+    print(f"\nYour final score: {score}/27")
+    if score == 27:
         print("Excellent! You know your amendments well!")
-    elif score >= 7:
+    elif score >= 20:
         print("Good job! A little more study and you'll be a pro.")
     else:
         print("Keep learning! The Constitution is worth knowing.")
@@ -618,7 +618,7 @@ def states_capitals_quiz():
     score = 0
     print("\nWelcome to the States and Capitals Quiz!")
     print("You will be given 5 questions. Try to match states with their capitals or vice versa.\n")
-    for _ in range(10):  # Ask 10 random questions
+    for _ in range(10):  # Ask 50 random questions
         if random.choice([True, False]):
             # Ask for the capital of a state
             state, capital = random.choice(list(states_and_capitals.items()))
@@ -637,10 +637,10 @@ def states_capitals_quiz():
                 score += 1
             else:
                 print(f"Wrong! {capital} is the capital of {state}.")
-    print(f"\nYour final score: {score}/10")
-    if score == 5:
+    print(f"\nYour final score: {score}/50")
+    if score == 50:
         print("Excellent! You know your states and capitals!")
-    elif score >= 3:
+    elif score >= 30:
         print("Good job! A little more practice and you'll master it.")
     else:
         print("Keep practicing! You'll get there.")
