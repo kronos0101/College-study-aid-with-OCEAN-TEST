@@ -399,116 +399,123 @@ def math_quiz():
 ### Periodic table quiz
 def periodic_table_quiz():
     # Dictionary of elements with their symbols as keys and names as values
+    
+
     elements = {
-    "H": "Hydrogen (1) \n  Family: Nonmetal \n Electron Configuration: 1s1",
-    "He": "Helium (2) \n Family: Noble Gas \v Electron Configuration: 1s2",
-    "Li": "Lithium (3) \nFamily: Alkali Metal \nElectron Configuration: [He] 2s1",
-    "Be": "Beryllium (4) \nFamily: Alkaline Earth Metal \nElectron Configuration: [He] 2s2",
-    "B": "Boron (5) \nFamily: Metalloid \nElectron Configuration: [He] 2s2 2p1",
-    "C": "Carbon (6) \nFamily: Nonmetal \nElectron Configuration: [He] 2s2 2p2",
-    "N": "Nitrogen (7) \nFamily: Nonmetal \nElectron Configuration: [He] 2s2 2p3",
-    "O": "Oxygen (8) \nFamily: Nonmetal \nElectron Configuration: [He] 2s2 2p4",
-    "F": "Fluorine (9) \nFamily: Halogen \nElectron Configuration: [He] 2s2 2p5",
-    "Ne": "Neon (10) \nFamily: Noble Gas \nElectron Configuration: [He] 2s2 2p6",
-    "Na": "Sodium (11) \nFamily: Alkali Metal \nElectron Configuration: [Ne] 3s1",
-    "Mg": "Magnesium (12) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Ne] 3s2",
-    "Al": "Aluminum (13) \nFamily: Post-Transition Metal \nElectron Configuration: [Ne] 3s2 3p1",
-    "Si": "Silicon (14) \nFamily: Metalloid \nElectron Configuration: [Ne] 3s2 3p2",
-    "P": "Phosphorus (15) \nFamily: Nonmetal \nElectron Configuration: [Ne] 3s2 3p3",
-    "S": "Sulfur (16) \nFamily: Nonmetal \nElectron Configuration: [Ne] 3s2 3p4",
-    "Cl": "Chlorine (17) \nFamily: Halogen \nElectron Configuration: [Ne] 3s2 3p5",
-    "Ar": "Argon (18) \nFamily: Noble Gas \nElectron Configuration: [Ne] 3s2 3p6",
-    "K": "Potassium (19) \nFamily: Alkali Metal \nElectron Configuration: [Ar] 4s1",
-    "Ca": "Calcium (20) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Ar] 4s2",
-    "Sc": "Scandium (21) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d1 4s2",
-    "Ti": "Titanium (22) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d2 4s2",
-    "V": "Vanadium (23) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d3 4s2",
-    "Cr": "Chromium (24) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d5 4s1",
-    "Mn": "Manganese (25) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d5 4s2",
-    "Fe": "Iron (26) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d6 4s2",
-    "Co": "Cobalt (27) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d7 4s2",
-    "Ni": "Nickel (28) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d8 4s2",
-    "Cu": "Copper (29) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d10 4s1",
-    "Zn": "Zinc (30) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d10 4s2",
-    "Ga": "Gallium (31) \nFamily: Post-Transition Metal \nElectron Configuration: [Ar] 3d10 4s2 4p1",
-    "Ge": "Germanium (32) \nFamily: Metalloid \nElectron Configuration: [Ar] 3d10 4s2 4p2",
-    "As": "Arsenic (33) \nFamily: Metalloid \nElectron Configuration: [Ar] 3d10 4s2 4p3",
-    "Se": "Selenium (34) \nFamily: Nonmetal \nElectron Configuration: [Ar] 3d10 4s2 4p4",
-    "Br": "Bromine (35) \nFamily: Halogen \nElectron Configuration: [Ar] 3d10 4s2 4p5",
-    "Kr": "Krypton (36) \nFamily: Noble Gas \nElectron Configuration: [Ar] 3d10 4s2 4p6",
-    "Rb": "Rubidium (37) \nFamily: Alkali Metal \nElectron Configuration: [Kr] 5s1",
-    "Sr": "Strontium (38) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Kr] 5s2",
-    "Y": "Yttrium (39) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d1 5s2",
-    "Zr": "Zirconium (40) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d2 5s2",
-    "Nb": "Niobium (41) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d4 5s1",
-    "Mo": "Molybdenum (42) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d5 5s1",
-    "Tc": "Technetium (43) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d5 5s2",
-    "Ru": "Ruthenium (44) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d7 5s1",
-    "Rh": "Rhodium (45) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d8 5s1",
-    "Pd": "Palladium (46) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d10",
-    "Ag": "Silver (47) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d10 5s1",
-    "Cd": "Cadmium (48) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d10 5s2",
-    "In": "Indium (49) \nFamily: Post-Transition Metal \nElectron Configuration: [Kr] 4d10 5s2 5p1",
-    "Sn": "Tin (50) \nFamily: Post-Transition Metal \nElectron Configuration: [Kr] 4d10 5s2 5p2",
-    "Sb": "Antimony (51) \nFamily: Metalloid \nElectron Configuration: [Kr] 4d10 5s2 5p3",
-    "Te": "Tellurium (52) \nFamily: Metalloid \nElectron Configuration: [Kr] 4d10 5s2 5p4",
-    "I": "Iodine (53) \nFamily: Halogen \nElectron Configuration: [Kr] 4d10 5s2 5p5",
-    "Xe": "Xenon (54) \nFamily: Noble Gas \nElectron Configuration: [Kr] 4d10 5s2 5p6",
-    "Cs": "Cesium (55) \nFamily: Alkali Metal \nElectron Configuration: [Xe] 6s1",
-    "Ba": "Barium (56) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Xe] 6s2",
-    "La": "Lanthanum (57) \nFamily: Lanthanide \nElectron Configuration: [Xe] 5d1 6s2",
-    "Ce": "Cerium (58) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f1 5d1 6s2",
-    "Pr": "Praseodymium (59) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f3 6s2",
-    "Nd": "Neodymium (60) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f4 6s2",
-    "Pm": "Promethium (61) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f5 6s2",
-    "Sm": "Samarium (62) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f6 6s2",
-    "Eu": "Europium (63) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f7 6s2",
-    "Gd": "Gadolinium (64) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f7 5d1 6s2",
-    "Tb": "Terbium (65) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f9 6s2",
-    "Dy": "Dysprosium (66) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f10 6s2",
-    "Ho": "Holmium (67) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f11 6s2",
-    "Er": "Erbium (68) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f12 6s2",
-    "Tm": "Thulium (69) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f13 6s2",
-    "Yb": "Ytterbium (70) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f14 6s2",
-    "Lu": "Lutetium (71) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f14 5d1 6s2",
-    "Hf": "Hafnium (72) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d2 6s2",
-    "Ta": "Tantalum (73) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d3 6s2",
-    "W": "Tungsten (74) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d4 6s2",
-    "Re": "Rhenium (75) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d5 6s2",
-    "Os": "Osmium (76) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d6 6s2",
-    "Ir": "Iridium (77) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d7 6s2",
-    "Pt": "Platinum (78) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d9 6s1",
-    "Au": "Gold (79) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s1",
-    "Hg": "Mercury (80) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2",
-    "Tl": "Thallium (81) \nFamily: Post-Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p1",
-    "Pb": "Lead (82) \nFamily: Post-Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p2",
-    "Bi": "Bismuth (83) \nFamily: Post-Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p3",
-    "Po": "Polonium (84) \nFamily: Metalloid \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p4",
-    "At": "Astatine (85) \nFamily: Metalloid \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p5",
-    "Rn": "Radon (86) \nFamily: Noble Gas \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p6",
-    "Fr": "Francium (87) \nFamily: Alkali Metal \nElectron Configuration: [Rn] 7s1",
-    "Ra": "Radium (88) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Rn] 7s2",
-    "Ac": "Actinium (89) \nFamily: Actinide \nElectron Configuration: [Rn] 6d1 7s2",
-    "Th": "Thorium (90) \nFamily: Actinide \nElectron Configuration: [Rn] 6d2 7s2",
-    "Pa": "Protactinium (91) \nFamily: Actinide \nElectron Configuration: [Rn] 5f2 6d1 7s2",
-    "U": "Uranium (92) \nFamily: Actinide \nElectron Configuration: [Rn] 5f3 6d1 7s2",
-    "Np": "Neptunium (93) \nFamily: Actinide \nElectron Configuration: [Rn] 5f4 6d1 7s2",
-    "Pu": "Plutonium (94) \nFamily: Actinide \nElectron Configuration: [Rn] 5f6 7s2",
-    "Am": "Americium (95) \nFamily: Actinide \nElectron Configuration: [Rn] 5f7 7s2",
-    "Cm": "Curium (96) \nFamily: Actinide \nElectron Configuration: [Rn] 5f7 6d1 7s2",
-    "Bk": "Berkelium (97) \nFamily: Actinide \nElectron Configuration: [Rn] 5f9 7s2",
-    "Cf": "Californium (98) \nFamily: Actinide \nElectron Configuration: [Rn] 5f10 7s2",
-    "Es": "Einsteinium (99) \nFamily: Actinide \nElectron Configuration: [Rn] 5f11 7s2",
-    "Fm": "Fermium (100) \nFamily: Actinide \nElectron Configuration: [Rn] 5f12 7s2",
-    "Md": "Mendelevium (101) \nFamily: Actinide \nElectron Configuration: [Rn] 5f13 7s2",
-    "No": "Nobelium (102) \nFamily: Actinide \nElectron Configuration: [Rn] 5f14 7s2",
-    "Lr": "Lawrencium (103) \nFamily: Actinide \nElectron Configuration: [Rn] 5f14 7s2 7p1",
-    "Rf": "Rutherfordium (104) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d2 7s2",
-    "Db": "Dubnium (105) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d3 7s2",
-    "Sg": "Seaborgium (106) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6", 
-    "Bh": "Bohrium (107) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d5 7s2", "Hs": "Hassium (108) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d6 7s2", "Mt": "Meitnerium (109) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d7 7s2", "Ds": "Darmstadtium (110) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d9 7s1", "Rg": "Roentgenium (111) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s1", "Cn": "Copernicium (112) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2", "Nh": "Nihonium (113) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p1", "Fl": "Flerovium (114) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p2", "Mc": "Moscovium (115) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p3", "Lv": "Livermorium (116) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p4", "Ts": "Tennessine (117) \nFamily: Halogen \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p5", "Og": "Oganesson (118) \nFamily: Noble Gas \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p6",
+    "H": "Hydrogen (1) \n~~~~ Family: Nonmetal \n~~~~ Electron Configuration: 1s1",
+    "He": "Helium (2) \n~~~~ Family: Noble Gas \n~~~~ Electron Configuration: 1s2",
+    "Li": "Lithium (3) \n~~~~ Family: Alkali Metal \n~~~~ Electron Configuration: He 2s1",
+    "Be": "Beryllium (4) \n~~~~ Family: Alkaline Earth Metal \n~~~~ Electron Configuration: 2s2",
+    "B": "Boron (5) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: He 2s2 2p1",
+    "C": "Carbon (6) \n~~~~ Family: Nonmetal \n~~~~ Electron Configuration: He 2s2 2p2",
+    "N": "Nitrogen (7) \n~~~~ Family: Nonmetal \n~~~~ Electron Configuration: He 2s2 2p3",
+    "O": "Oxygen (8) \n~~~~ Family: Nonmetal \n~~~~ Electron Configuration: He 2s2 2p4",
+    "F": "Fluorine (9) \n~~~~ Family: Halogen \n~~~~ Electron Configuration: He 2s2 2p5",
+    "Ne": "Neon (10) \n~~~~ Family: Noble Gas \n~~~~ Electron Configuration: He 2s2 2p6",
+    "Na": "Sodium (11) \n~~~~ Family: Alkali Metal \n~~~~ Electron Configuration: Ne 3s1",
+    "Mg": "Magnesium (12) \n~~~~ Family: Alkaline Earth Metal \n~~~~ Electron Configuration: Ne 3s2",
+    "Al": "Aluminum (13) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Ne 3s2 3p1",
+    "Si": "Silicon (14) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: Ne 3s2 3p2",
+    "P": "Phosphorus (15) \n~~~~ Family: Nonmetal \n~~~~ Electron Configuration: Ne 3s2 3p3",
+    "S": "Sulfur (16) \n~~~~ Family: Nonmetal \n~~~~ Electron Configuration: Ne 3s2 3p4",
+    "Cl": "Chlorine (17) \n~~~~ Family: Halogen \n~~~~ Electron Configuration: Ne 3s2 3p5",
+    "Ar": "Argon (18) \n~~~~ Family: Noble Gas \n~~~~ Electron Configuration: Ne 3s2 3p6",
+    "K": "Potassium (19) \n~~~~ Family: Alkali Metal \n~~~~ Electron Configuration: Ar 4s1",
+    "Ca": "Calcium (20) \n~~~~ Family: Alkaline Earth Metal \n~~~~ Electron Configuration: Ar 4s2",
+    "Sc": "Scandium (21) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d1 4s2",
+    "Ti": "Titanium (22) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d2 4s2",
+    "V": "Vanadium (23) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d3 4s2",
+    "Cr": "Chromium (24) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d5 4s1",
+    "Mn": "Manganese (25) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d5 4s2",
+    "Fe": "Iron (26) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d6 4s2",
+    "Co": "Cobalt (27) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d7 4s2",
+    "Ni": "Nickel (28) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d8 4s2",
+    "Cu": "Copper (29) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d10 4s1",
+    "Zn": "Zinc (30) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Ar 3d10 4s2",
+    "Ga": "Gallium (31) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Ar 3d10 4s2 4p1",
+    "Ge": "Germanium (32) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: Ar 3d10 4s2 4p2",
+    "As": "Arsenic (33) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: Ar 3d10 4s2 4p3",
+    "Se": "Selenium (34) \n~~~~ Family: Nonmetal \n~~~~ Electron Configuration: Ar 3d10 4s2 4p4",
+    "Br": "Bromine (35) \n~~~~ Family: Halogen \n~~~~ Electron Configuration: Ar 3d10 4s2 4p5",
+    "Kr": "Krypton (36) \n~~~~ Family: Noble Gas \n~~~~ Electron Configuration: Ar 3d10 4s2 4p6",
+    "Rb": "Rubidium (37) \n~~~~ Family: Alkali Metal \n~~~~ Electron Configuration: Kr 5s1",
+    "Sr": "Strontium (38) \n~~~~ Family: Alkaline Earth Metal \n~~~~ Electron Configuration: Kr 5s2",
+    "Y": "Yttrium (39) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d1 5s2",
+    "Zr": "Zirconium (40) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d2 5s2",
+    "Nb": "Niobium (41) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d4 5s1",
+    "Mo": "Molybdenum (42) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d5 5s1",
+    "Tc": "Technetium (43) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d5 5s2",
+    "Ru": "Ruthenium (44) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d7 5s1",
+    "Rh": "Rhodium (45) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d8 5s1",
+    "Pd": "Palladium (46) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d10",
+    "Ag": "Silver (47) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d10 5s1",
+    "Cd": "Cadmium (48) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Kr 4d10 5s2", 
+    "In": "Indium (49) \n~~~~ Family: Post-Transition Metal \n~~~~ Electron Configuration: Kr 4d10 5s2 5p1",
+    "Sn": "Tin (50) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Kr 4d10 5s2 5p2",
+    "Sb": "Antimony (51) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: Kr 4d10 5s2 5p3",
+    "Te": "Tellurium (52) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: Kr 4d10 5s2 5p4",
+    "I": "Iodine (53) \n~~~~ Family: Halogen \n~~~~ Electron Configuration: Kr 4d10 5s2 5p5",
+    "Xe": "Xenon (54) \n~~~~ Family: Noble Gas \n~~~~ Electron Configuration: Kr 4d10 5s2 5p6",
+    "Cs": "Cesium (55) \n~~~~ Family: Alkali Metal \n~~~~ Electron Configuration: Xe 6s1",
+    "Ba": "Barium (56) \n~~~~ Family: Alkaline Earth Metal \n~~~~ Electron Configuration: Xe 6s2",
+    "La": "Lanthanum (57) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 5d1 6s2",
+    "Ce": "Cerium (58) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f1 5d1 6s2",
+    "Pr": "Praseodymium (59) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f3 6s2",
+    "Nd": "Neodymium (60) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f4 6s2",
+    "Pm": "Promethium (61) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f5 6s2",
+    "Sm": "Samarium (62) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f6 6s2",
+    "Eu": "Europium (63) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f7 6s2",
+    "Gd": "Gadolinium (64) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f7 5d1 6s2",
+    "Tb": "Terbium (65) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f9 6s2",
+    "Dy": "Dysprosium (66) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f10 6s2",
+    "Ho": "Holmium (67) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f11 6s2",
+    "Er": "Erbium (68) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f12 6s2",
+    "Tm": "Thulium (69) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f13 6s2",
+    "Yb": "Ytterbium (70) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f14 6s2",
+    "Lu": "Lutetium (71) \n~~~~ Family: Lanthanide \n~~~~ Electron Configuration: Xe 4f14 5d1 6s2",
+    "Hf": "Hafnium (72) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d2 6s2",
+    "Ta": "Tantalum (73) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d3 6s2",
+    "W": "Tungsten (74) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d4 6s2",
+    "Re": "Rhenium (75) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d5 6s2",
+    "Os": "Osmium (76) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d6 6s2",
+    "Ir": "Iridium (77) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d7 6s2",
+    "Pt": "Platinum (78) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d9 6s1",
+    "Au": "Gold (79) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d10 6s1",
+    "Hg": "Mercury (80) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d10 6s2",
+    "Tl": "Thallium (81) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d10 6s2 6p1",
+    "Pb": "Lead (82) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d10 6s2 6p2",
+    "Bi": "Bismuth (83) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Xe 4f14 5d10 6s2 6p3",
+    "Po": "Polonium (84) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: Xe 4f14 5d10 6s2 6p4",
+    "At": "Astatine (85) \n~~~~ Family: Metalloid \n~~~~ Electron Configuration: Xe 4f14 5d10 6s2 6p5",
+    "Rn": "Radon (86) \n~~~~ Family: Noble Gas \n~~~~ Electron Configuration: Xe 4f14 5d10 6s2 6p6",
+    "Fr": "Francium (87) \n~~~~ Family: Alkali Metal \n~~~~ Electron Configuration: Rn 7s1",
+    "Ra": "Radium (88) \n~~~~ Family: Alkaline Earth Metal \n~~~~ Electron Configuration: Rn 7s2",
+    "Ac": "Actinium (89) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 6d1 7s2",
+    "Th": "Thorium (90) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 6d2 7s2",
+    "Pa": "Protactinium (91) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f2 6d1 7s2",
+    "U": "Uranium (92) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f3 6d1 7s2",
+    "Np": "Neptunium (93) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f4 6d1 7s2",
+    "Pu": "Plutonium (94) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f6 7s2",
+    "Am": "Americium (95) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f7 7s2",
+    "Cm": "Curium (96) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f7 6d1 7s2",
+    "Bk": "Berkelium (97) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f9 7s2",
+    "Cf": "Californium (98) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f10 7s2",
+    "Es": "Einsteinium (99) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f11 7s2",
+    "Fm": "Fermium (100) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f12 7s2",
+    "Md": "Mendelevium (101) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f13 7s2",
+    "No": "Nobelium (102) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f14 7s2",
+    "Lr": "Lawrencium (103) \n~~~~ Family: Actinide \n~~~~ Electron Configuration: Rn 5f14 7s2 7p1",
+    "Rf": "Rutherfordium (104) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d2 7s2",
+    "Db": "Dubnium (105) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d3 7s2",
+    "Sg": "Seaborgium (106) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6", 
+    "Bh": "Bohrium (107) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d5 7s2", "Hs": "Hassium (108) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d6 7s2", "Mt": "Meitnerium (109) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d7 7s2", "Ds": "Darmstadtium (110) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d9 7s1", "Rg": "Roentgenium (111) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d10 7s1", "Cn": "Copernicium (112) \n~~~~ Family: Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d10 7s2", "Nh": "Nihonium (113) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d10 7s2 7p1", "Fl": "Flerovium (114) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d10 7s2 7p2", "Mc": "Moscovium (115) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d10 7s2 7p3", "Lv": "Livermorium (116) \n~~~~ Family: Post\n~~~~Transition Metal \n~~~~ Electron Configuration: Rn 5f14 6d10 7s2 7p4", "Ts": "Tennessine (117) \n~~~~ Family: Halogen \n~~~~ Electron Configuration: Rn 5f14 6d10 7s2 7p5", "Og": "Oganesson (118) \n~~~~ Family: Noble Gas \n~~~~ Electron Configuration: Rn 5f14 6d10 7s2 7p6"
 	
-   }
+}
+
+
+
+   
+
    
     name = input("Enter your name: ").strip()
     correct = 0
@@ -525,12 +532,12 @@ def periodic_table_quiz():
             asked.clear()
 
         while True:
-            symbol, element_description = random.choice(all_questions)
+            symbol, element_name = random.choice(all_questions)
             if symbol not in asked:
                 asked.add(symbol)
                 break
 
-        answer = input(f"What is the symbol for this element?\nDescription: {element_description}\nYour answer: ").strip().title()
+        answer = input(f"What is the symbol for this element '{element_name}'? ").strip().title()
         if answer == symbol:
             print("Correct!")
             correct += 1
@@ -541,7 +548,16 @@ def periodic_table_quiz():
         print(f"Correct: {correct}, Wrong: {wrong}/10")
 
     print(f"\nGame over! You answered {correct} questions correctly before getting 10 wrong.")
+
 #amendments-quiz 
+    
+def amendments_quiz():
+
+    
+    # Simple format for questions
+   
+    import random
+
 def amendments_quiz():
     # Simple format for questions
     questions = {
@@ -577,35 +593,34 @@ def amendments_quiz():
 
     # Detailed answers
     answers = {
-	1: "Freedom of speech, religion, press, assembly, and petition (1791) \nJames Madison \nMost impacted: All U.S. citizens, especially activists and minorities. Trick: 1 mouth, 1 voice.",
-        2: "Right to keep and bear arms (1791) \nJames Madison \nMost impacted: Gun owners and advocates for self-defense. Trick: 2 arms to bear arms.",
-        3: "No quartering of soldiers in private homes without consent (1791) \nJames Madison \nMost impacted: Private homeowners. Trick: 3's a crowd (no soldiers in homes).",
-        4: "Protection against unreasonable searches and seizures (1791) \nJames Madison \nMost impacted: Individuals involved in legal or criminal justice matters. Trick: 4 walls protect your privacy.",
-        5: "Protection against self-incrimination, double jeopardy; guarantees due process (1791) \nJames Madison \nMost impacted: Defendants in criminal cases. Trick: Take the 5th (remain silent).",
-        6: "Right to a speedy and public trial by an impartial jury (1791) \nJames Madison \nMost impacted: Defendants in criminal trials. Trick: Speedy trial gets you home by 6.",
-        7: "Right to trial by jury in civil cases (1791) \nJames Madison \nMost impacted: Civil litigants seeking justice. Trick: 7 rhymes with 'heaven'—fair civil trials.",
-        8: "Protection against cruel and unusual punishment (1791) \nJames Madison \nMost impacted: Inmates and criminal defendants. Trick: Sideways 8 looks like handcuffs.",
-        9: "Rights retained by the people, even if not specifically enumerated in the Constitution (1791) \nJames Madison \nMost impacted: All U.S. citizens, especially those concerned about overreach. Trick: 9 makes sure you’re fine.",
-        10: "Powers not delegated to the federal government are reserved to the states or the people (1791) \nJames Madison \nMost impacted: State governments and individuals. Trick: Federal power ends at 10.",
-        11: "Limits lawsuits against states (1795) \nJohn Marshall \nMost impacted: State governments. Trick: 1-on-1 disputes between citizens and states.",
-        12: "Revises presidential election procedures (1804) \nThomas Jefferson \nMost impacted: Presidential candidates and voters. Trick: 1 vote for president, 2 for VP.",
-        13: "Abolition of slavery (1865) \nAbraham Lincoln \nMost impacted: Enslaved individuals. Trick: Unlucky 13 turned lucky for freedom.",
-        14: "Equal protection under the law and due process for all citizens (1868) \nJohn Bingham \nMost impacted: Minorities and historically marginalized groups. Trick: 1 nation 4 equality.",
-        15: "Right to vote cannot be denied based on race, color, or previous servitude (1870) \nUlysses S. Grant \nMost impacted: African Americans and minorities. Trick: 15 freed votes.",
-        16: "Congress can levy an income tax (1913) \nWilliam Howard Taft \nMost impacted: Taxpayers. Trick: Sweet 16, but now you pay taxes.",
-        17: "Establishes the direct election of U.S. Senators by popular vote (1913) \nWoodrow Wilson \nMost impacted: Voters. Trick: 17 senators closer to heaven (elected by people).",
-        18: "Prohibition of alcohol (repealed by the 21st Amendment) (1919) \nWayne Wheeler \nMost impacted: Alcohol producers and consumers. Trick: 18 is too young to drink.",
-        19: "Women's right to vote (1920) \nSusan B. Anthony \nMost impacted: Women. Trick: 19 suffragettes on the march.",
-        20: "Changes the dates of congressional and presidential terms (1933) \nGeorge Norris \nMost impacted: Congress and the president. Trick: Jan 20 starts a new term.",
-        21: "Repeal of Prohibition (18th Amendment) (1933) \nFiorello La Guardia \nMost impacted: Alcohol producers and consumers. Trick: 21 means you can drink.",
-        22: "Limits the President to two terms in office (1951) \nHarry S. Truman \nMost impacted: Presidential candidates. Trick: 2 terms for 22.",
-        23: "Gives residents of Washington D.C. the right to vote for representatives in the Electoral College (1961) \nEleanor Holmes Norton \nMost impacted: D.C. residents. Trick: 2-3 votes for D.C.",
-        24: "Abolishes poll taxes (1964) \nLyndon B. Johnson \nMost impacted: Low-income voters. Trick: 24 stops taxing at the door.",
-        25: "Addresses presidential succession and disability (1967) \nBirch Bayh \nMost impacted: Presidential officeholders and their staff. Trick: 25 keeps the presidency alive.",
-        26: "Voting age lowered to 18 (1971) \nJennings Randolph \nMost impacted: Young voters. Trick: 2+6 = 18 to vote.",
-        27: "Delays laws affecting Congressional salary from taking effect until after the next election of representatives (1992) \nGregory Watson \nMost impacted: Members of Congress. Trick: 27 waits till the next election."
+        1: "Freedom of speech, religion, press, assembly, and petition (1791) - James Madison - Most impacted: All U.S. citizens, especially activists and minorities. Trick: 1 mouth, 1 voice.",
+        2: "Right to keep and bear arms (1791) - James Madison - Most impacted: Gun owners and advocates for self-defense. Trick: 2 arms to bear arms.",
+        3: "No quartering of soldiers in private homes without consent (1791) - James Madison - Most impacted: Private homeowners. Trick: 3's a crowd (no soldiers in homes).",
+        4: "Protection against unreasonable searches and seizures (1791) - James Madison - Most impacted: Individuals involved in legal or criminal justice matters. Trick: 4 walls protect your privacy.",
+        5: "Protection against self-incrimination, double jeopardy; guarantees due process (1791) - James Madison - Most impacted: Defendants in criminal cases. Trick: Take the 5th (remain silent).",
+        6: "Right to a speedy and public trial by an impartial jury (1791) - James Madison - Most impacted: Defendants in criminal trials. Trick: Speedy trial gets you home by 6.",
+        7: "Right to trial by jury in civil cases (1791) - James Madison - Most impacted: Civil litigants seeking justice. Trick: 7 rhymes with 'heaven'—fair civil trials.",
+        8: "Protection against cruel and unusual punishment (1791) - James Madison - Most impacted: Inmates and criminal defendants. Trick: Sideways 8 looks like handcuffs.",
+        9: "Rights retained by the people, even if not specifically enumerated in the Constitution (1791) - James Madison - Most impacted: All U.S. citizens, especially those concerned about overreach. Trick: 9 makes sure you’re fine.",
+        10: "Powers not delegated to the federal government are reserved to the states or the people (1791) - James Madison - Most impacted: State governments and individuals. Trick: Federal power ends at 10.",
+        11: "Limits lawsuits against states (1795) - John Marshall - Most impacted: State governments. Trick: 1-on-1 disputes between citizens and states.",
+        12: "Revises presidential election procedures (1804) - Thomas Jefferson - Most impacted: Presidential candidates and voters. Trick: 1 vote for president, 2 for VP.",
+        13: "Abolition of slavery (1865) - Abraham Lincoln - Most impacted: Enslaved individuals. Trick: Unlucky 13 turned lucky for freedom.",
+        14: "Equal protection under the law and due process for all citizens (1868) - John Bingham - Most impacted: Minorities and historically marginalized groups. Trick: 1 nation 4 equality.",
+        15: "Right to vote cannot be denied based on race, color, or previous servitude (1870) - Ulysses S. Grant - Most impacted: African Americans and minorities. Trick: 15 freed votes.",
+        16: "Congress can levy an income tax (1913) - William Howard Taft - Most impacted: Taxpayers. Trick: Sweet 16, but now you pay taxes.",
+        17: "Establishes the direct election of U.S. Senators by popular vote (1913) - Woodrow Wilson - Most impacted: Voters. Trick: 17 senators closer to heaven (elected by people).",
+        18: "Prohibition of alcohol (repealed by the 21st Amendment) (1919) - Wayne Wheeler - Most impacted: Alcohol producers and consumers. Trick: 18 is too young to drink.",
+        19: "Women's right to vote (1920) - Susan B. Anthony - Most impacted: Women. Trick: 19 suffragettes on the march.",
+        20: "Changes the dates of congressional and presidential terms (1933) - George Norris - Most impacted: Congress and the president. Trick: Jan 20 starts a new term.",
+        21: "Repeal of Prohibition (18th Amendment) (1933) - Fiorello La Guardia - Most impacted: Alcohol producers and consumers. Trick: 21 means you can drink.",
+        22: "Limits the President to two terms in office (1951) - Harry S. Truman - Most impacted: Presidential candidates. Trick: 2 terms for 22.",
+        23: "Gives residents of Washington D.C. the right to vote for representatives in the Electoral College (1961) - Eleanor Holmes Norton - Most impacted: D.C. residents. Trick: 2-3 votes for D.C.",
+        24: "Abolishes poll taxes (1964) - Lyndon B. Johnson - Most impacted: Low-income voters. Trick: 24 stops taxing at the door.",
+        25: "Addresses presidential succession and disability (1967) - Birch Bayh - Most impacted: Presidential officeholders and their staff. Trick: 25 keeps the presidency alive.",
+        26: "Voting age lowered to 18 (1971) - Jennings Randolph - Most impacted: Young voters. Trick: 2+6 = 18 to vote.",
+        27: "Delays laws affecting Congressional salary from taking effect until after the next election of representatives (1992) - Gregory Watson - Most impacted: Members of Congress. Trick: 27 waits till the next election."
     }
-}
 
     score = 0
     print("\nWelcome to the Amendments Quiz!")
@@ -641,66 +656,33 @@ def amendments_quiz():
         print("Keep learning! The Constitution is worth knowing.")
         print("\n")
                 
+
+#state capitals quiz
+
 def states_capitals_quiz():
     
     # Dictionary of U.S. states and their capitals
-states_and_capitals = {
-    "Alabama"\n {"Capital"\n "Montgomery", "Flower"\n "Camellia", "Bird"\n "Northern Flicker (Yellowhammer)", "Date Added"\n "December 14, 1819", "Electoral Votes"\n 9, "Statehood Rank"\n 22},
-    "Alaska"\n {"Capital"\n "Juneau", "Flower"\n "Forget-Me-Not", "Bird"\n "Willow Ptarmigan", "Date Added"\n "January 3, 1959", "Electoral Votes"\n 3, "Statehood Rank"\n 49},
-    "Arizona"\n {"Capital"\n "Phoenix", "Flower"\n "Saguaro Cactus Blossom", "Bird"\n "Cactus Wren", "Date Added"\n "February 14, 1912", "Electoral Votes"\n 11, "Statehood Rank"\n 48},
-    "Arkansas"\n {"Capital"\n "Little Rock", "Flower"\n "Apple Blossom", "Bird"\n "Northern Mockingbird", "Date Added"\n "June 15, 1836", "Electoral Votes"\n 6, "Statehood Rank"\n 25},
-    "California"\n {"Capital"\n "Sacramento", "Flower"\n "California Poppy", "Bird"\n "California Quail", "Date Added"\n "September 9, 1850", "Electoral Votes"\n 54, "Statehood Rank"\n 31},
-    "Colorado"\n {"Capital"\n "Denver", "Flower"\n "Rocky Mountain Columbine", "Bird"\n "Lark Bunting", "Date Added"\n "August 1, 1876", "Electoral Votes"\n 10, "Statehood Rank"\n 38},
-    "Connecticut"\n {"Capital"\n "Hartford", "Flower"\n "Mountain Laurel", "Bird"\n "American Robin", "Date Added"\n "January 9, 1788", "Electoral Votes"\n 7, "Statehood Rank"\n 5},
-    "Delaware"\n {"Capital"\n "Dover", "Flower"\n "Peach Blossom", "Bird"\n "Delaware Blue Hen", "Date Added"\n "December 7, 1787", "Electoral Votes"\n 3, "Statehood Rank"\n 1},
-    "Florida"\n {"Capital"\n "Tallahassee", "Flower"\n "Orange Blossom", "Bird"\n "Northern Mockingbird", "Date Added"\n "March 3, 1845", "Electoral Votes"\n 30, "Statehood Rank"\n 27},
-    "Georgia"\n {"Capital"\n "Atlanta", "Flower"\n "Cherokee Rose", "Bird"\n "Brown Thrasher", "Date Added"\n "January 2, 1788", "Electoral Votes"\n 16, "Statehood Rank"\n 4},
-    "Hawaii"\n {"Capital"\n "Honolulu", "Flower"\n "Hibiscus", "Bird"\n "Nene (Hawaiian Goose)", "Date Added"\n "August 21, 1959", "Electoral Votes"\n 4, "Statehood Rank"\n 50},
-    "Idaho"\n {"Capital"\n "Boise", "Flower"\n "Syringa", "Bird"\n "Mountain Bluebird", "Date Added"\n "July 3, 1890", "Electoral Votes"\n 4, "Statehood Rank"\n 43},
-    "Illinois"\n {"Capital"\n "Springfield", "Flower"\n "Violet", "Bird"\n "Northern Cardinal", "Date Added"\n "December 3, 1818", "Electoral Votes"\n 19, "Statehood Rank"\n 21},
-    "Indiana"\n {"Capital"\n "Indianapolis", "Flower"\n "Peony", "Bird"\n "Northern Cardinal", "Date Added"\n "December 11, 1816", "Electoral Votes"\n 11, "Statehood Rank"\n 19},
-    "Iowa"\n {"Capital"\n "Des Moines", "Flower"\n "Wild Prairie Rose", "Bird"\n "Eastern Goldfinch", "Date Added"\n "December 28, 1846", "Electoral Votes"\n 6, "Statehood Rank"\n 29},
-    "Kansas"\n {"Capital"\n "Topeka", "Flower"\n "Sunflower", "Bird"\n "Western Meadowlark", "Date Added"\n "January 29, 1861", "Electoral Votes"\n 6, "Statehood Rank"\n 34},
-    "Kentucky"\n {"Capital"\n "Frankfort", "Flower"\n "Goldenrod", "Bird"\n "Northern Cardinal", "Date Added"\n "June 1, 1792", "Electoral Votes"\n 8, "Statehood Rank"\n 15},
-    "Louisiana"\n {"Capital"\n "Baton Rouge", "Flower"\n "Magnolia", "Bird"\n "Brown Pelican", "Date Added"\n "April 30, 1812", "Electoral Votes"\n 8, "Statehood Rank"\n 18},
-    "Maine"\n {"Capital"\n "Augusta", "Flower"\n "White Pine Cone and Tassel", "Bird"\n "Chickadee", "Date Added"\n "March 15, 1820", "Electoral Votes"\n 4, "Statehood Rank"\n 23},
-    "Maryland"\n {"Capital"\n "Annapolis", "Flower"\n "Black-Eyed Susan", "Bird"\n "Baltimore Oriole", "Date Added"\n "April 28, 1788", "Electoral Votes"\n 10, "Statehood Rank"\n 7},
-    "Massachusetts"\n {"Capital"\n "Boston", "Flower"\n "Mayflower", "Bird"\n "Black-Capped Chickadee", "Date Added"\n "February 6, 1788", "Electoral Votes"\n 11, "Statehood Rank"\n 6},
-    "Michigan"\n {"Capital"\n "Lansing", "Flower"\n "Apple Blossom", "Bird"\n "American Robin", "Date Added"\n "January 26, 1837", "Electoral Votes"\n 15, "Statehood Rank"\n 26},
-    "Minnesota"\n {"Capital"\n "Saint Paul", "Flower"\n "Pink and White Lady's Slipper", "Bird"\n "Common Loon", "Date Added"\n "May 11, 1858", "Electoral Votes"\n 10, "Statehood Rank"\n 32},
-    "Mississippi"\n {"Capital"\n "Jackson", "Flower"\n "Magnolia", "Bird"\n "Northern Mockingbird", "Date Added"\n "December 10, 1817", "Electoral Votes"\n 6, "Statehood Rank"\n 20},
-    "Missouri"\n {"Capital"\n "Jefferson City", "Flower"\n "Hawthorn", "Bird"\n "Eastern Bluebird", "Date Added"\n "August 10, 1821", "Electoral Votes"\n 10, "Statehood Rank"\n 24},
-    "Montana"\n {"Capital"\n "Helena", "Flower"\n "Bitterroot", "Bird"\n "Western Meadowlark", "Date Added"\n "November 8, 1889", "Electoral Votes"\n 3, "Statehood Rank"\n 41},
-    "Nebraska"\n {"Capital"\n "Lincoln", "Flower"\n "Goldenrod", "Bird"\n "Western Meadowlark", "Date Added"\n "March 1, 1867", "Electoral Votes"\n 5, "Statehood Rank"\n 37},
-    "Nevada"\n {"Capital"\n "Carson City", "Flower"\n "Sagebrush", "Bird"\n "Mountain Bluebird", "Date Added"\n "October 31, 1864", "Electoral Votes"\n 6, "Statehood Rank"\n 36},
-    "New Hampshire"\n {"Capital"\n "Concord", "Flower"\n "Purple Lilac", "Bird"\n "Purple Finch", "Date Added"\n "June 21, 1788", "Electoral Votes"\n 4, "Statehood Rank"\n 9},
-    "New Jersey"\n {"Capital"\n "Trenton", "Flower"\n "Violet", "Bird"\n "Eastern Goldfinch", "Date Added"\n "December 18, 1787", "Electoral Votes"\n 14, "Statehood Rank"\n 3},
-    "New Mexico"\n {"Capital"\n "Santa Fe", "Flower"\n "Yucca Flower", "Bird"\n "Greater Roadrunner", "Date Added"\n "January 6, 1912", "Electoral Votes"\n 5, "Statehood Rank"\n 47},
-    "New York"\n {"Capital"\n "Albany", "Flower"\n "Rose", "Bird"\n "Eastern Bluebird", "Date Added"\n "July 26, 1788", "Electoral Votes"\n 28, "Statehood Rank"\n 11},
-    "North Carolina"\n {"Capital"\n "Raleigh", "Flower"\n "Flowering Dogwood", "Bird"\n "Northern Cardinal", "Date Added"\n "November 21, 1789", "Electoral Votes"\n 16, "Statehood Rank"\n 12},
-    "North Dakota"\n {"Capital"\n "Bismarck", "Flower"\n "Wild Prairie Rose", "Bird"\n "Western Meadowlark", "Date Added"\n "November 2, 1889", "Electoral Votes"\n 3, "Statehood Rank"\n 39},
-    "Ohio"\n {"Capital"\n "Columbus", "Flower"\n "Scarlet Carnation", "Bird"\n "Northern Cardinal", "Date Added"\n "March 1, 1803", "Electoral Votes"\n 17, "Statehood Rank"\n 17},
-    "Oklahoma"\n {"Capital"\n "Oklahoma City", "Flower"\n "Mistletoe", "Bird"\n "Scissor-tailed Flycatcher", "Date Added"\n "November 16, 1907", "Electoral Votes"\n 7, "Statehood Rank"\n 46},
-    "Oregon"\n {"Capital"\n "Salem", "Flower"\n "Oregon Grape", "Bird"\n "Western Meadowlark", "Date Added"\n "February 14, 1859", "Electoral Votes"\n 8, "Statehood Rank"\n 33},
-    "Pennsylvania"\n {"Capital"\n "Harrisburg", "Flower"\n "Mountain Laurel", "Bird"\n "Ruffed Grouse", "Date Added"\n "December 12, 1787", "Electoral Votes"\n 19, "Statehood Rank"\n 2},
-    "Rhode Island"\n {"Capital"\n "Providence", "Flower"\n "Violet", "Bird"\n "Rhode Island Red", "Date Added"\n "May 29, 1790", "Electoral Votes"\n 4, "Statehood Rank"\n 13},
-    "South Carolina"\n {"Capital"\n "Columbia", "Flower"\n "Yellow Jessamine", "Bird"\n "Carolina Wren", "Date Added"\n "May 23, 1788", "Electoral Votes"\n 9, "Statehood Rank"\n 8},
-    "South Dakota"\n {"Capital"\n "Pierre", "Flower"\n "Pasque Flower", "Bird"\n "Ring-necked Pheasant", "Date Added"\n "November 2, 1889", "Electoral Votes"\n 3, "Statehood Rank"\n 40},
-    "Tennessee"\n {"Capital"\n "Nashville", "Flower"\n "Iris", "Bird"\n "Northern Mockingbird", "Date Added"\n "June 1, 1796", "Electoral Votes"\n 11, "Statehood Rank"\n 16},
-    "Texas"\n {"Capital"\n "Austin", "Flower"\n "Bluebonnet", "Bird"\n "Northern Mockingbird", "Date Added"\n "December 29, 1845", "Electoral Votes"\n 40, "Statehood Rank"\n 28},
-    "Utah"\n {"Capital"\n "Salt Lake City", "Flower"\n "Sego Lily", "Bird"\n "California Gull", "Date Added"\n "January 4, 1896", "Electoral Votes"\n 6, "Statehood Rank"\n 45},
-    "Vermont"\n {"Capital"\n "Montpelier", "Flower"\n "Red Clover", "Bird"\n "Hermit Thrush", "Date Added"\n "March 4, 1791", "Electoral Votes"\n 3, "Statehood Rank"\n 14},
-    "Virginia"\n {"Capital"\n "Richmond", "Flower"\n "American Dogwood", "Bird"\n "Northern Cardinal", "Date Added"\n "June 25, 1788", "Electoral Votes"\n 13, "Statehood Rank"\n 10},
-    "Washington"\n {"Capital"\n "Olympia", "Flower"\n "Rhododendron", "Bird"\n "Willow Goldfinch", "Date Added"\n "November 11, 1889", "Electoral Votes"\n 12, "Statehood Rank"\n 42},
-    "West Virginia"\n {"Capital"\n "Charleston", "Flower"\n "Rhododendron", "Bird"\n "Northern Cardinal", "Date Added"\n "June 20, 1863", "Electoral Votes"\n 4, "Statehood Rank"\n 35},
-    "Wisconsin"\n {"Capital"\n "Madison", "Flower"\n "Wood Violet", "Bird"\n "American Robin", "Date Added"\n "May 29, 1848", "Electoral Votes"\n 10, "Statehood Rank"\n 30},
-    "Wyoming"\n {"Capital"\n "Cheyenne", "Flower"\n "Indian Paintbrush", "Bird"\n "Western Meadowlark", "Date Added"\n "July 10, 1890", "Electoral Votes"\n 3, "Statehood Rank"\n 44}
-}
+    states_and_capitals = {
+        "Alabama": "Montgomery", "Alaska": "Juneau", "Arizona": "Phoenix", "Arkansas": "Little Rock",
+        "California": "Sacramento", "Colorado": "Denver", "Connecticut": "Hartford", "Delaware": "Dover",
+        "Florida": "Tallahassee", "Georgia": "Atlanta", "Hawaii": "Honolulu", "Idaho": "Boise",
+        "Illinois": "Springfield", "Indiana": "Indianapolis", "Iowa": "Des Moines", "Kansas": "Topeka",
+        "Kentucky": "Frankfort", "Louisiana": "Baton Rouge", "Maine": "Augusta", "Maryland": "Annapolis",
+        "Massachusetts": "Boston", "Michigan": "Lansing", "Minnesota": "Saint Paul", "Mississippi": "Jackson",
+        "Missouri": "Jefferson City", "Montana": "Helena", "Nebraska": "Lincoln", "Nevada": "Carson City",
+        "New Hampshire": "Concord", "New Jersey": "Trenton", "New Mexico": "Santa Fe", "New York": "Albany",
+        "North Carolina": "Raleigh", "North Dakota": "Bismarck", "Ohio": "Columbus", "Oklahoma": "Oklahoma City",
+        "Oregon": "Salem", "Pennsylvania": "Harrisburg", "Rhode Island": "Providence", "South Carolina": "Columbia",
+        "South Dakota": "Pierre", "Tennessee": "Nashville", "Texas": "Austin", "Utah": "Salt Lake City",
+        "Vermont": "Montpelier", "Virginia": "Richmond", "Washington": "Olympia", "West Virginia": "Charleston",
+        "Wisconsin": "Madison", "Wyoming": "Cheyenne"
+    }
+    
 
     score = 0
     print("\nWelcome to the States and Capitals Quiz!")
     print("You will be given 5 questions. Try to match states with their capitals or vice versa.\n")
-    for _ in range(10):  # Ask 10 random questions
+    for _ in range(10):  # Ask 25 random questions
         if random.choice([True, False]):
             # Ask for the capital of a state
             state, capital = random.choice(list(states_and_capitals.items()))
@@ -719,10 +701,10 @@ states_and_capitals = {
                 score += 1
             else:
                 print(f"Wrong! {capital} is the capital of {state}.")
-    print(f"\nYour final score: {score}/10")
-    if score == 5:
+    print(f"\nYour final score: {score}/25")
+    if score == 25:
         print("Excellent! You know your states and capitals!")
-    elif score >= 3:
+    elif score >= 18:
         print("Good job! A little more practice and you'll master it.")
     else:
         print("Keep practicing! You'll get there.")
