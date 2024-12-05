@@ -618,7 +618,7 @@ def states_capitals_quiz():
     score = 0
     print("\nWelcome to the States and Capitals Quiz!")
     print("You will be given 5 questions. Try to match states with their capitals or vice versa.\n")
-    for _ in range(10):  # Ask 50 random questions
+    for _ in range(10):  # Ask 25 random questions
         if random.choice([True, False]):
             # Ask for the capital of a state
             state, capital = random.choice(list(states_and_capitals.items()))
@@ -637,10 +637,10 @@ def states_capitals_quiz():
                 score += 1
             else:
                 print(f"Wrong! {capital} is the capital of {state}.")
-    print(f"\nYour final score: {score}/50")
-    if score == 50:
+    print(f"\nYour final score: {score}/25")
+    if score == 25:
         print("Excellent! You know your states and capitals!")
-    elif score >= 30:
+    elif score >= 18:
         print("Good job! A little more practice and you'll master it.")
     else:
         print("Keep practicing! You'll get there.")
