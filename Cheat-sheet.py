@@ -644,7 +644,7 @@ def amendments_quiz():
 def states_capitals_quiz():
     
     # Dictionary of U.S. states and their capitals
-    states_and_capitals = {
+states_and_capitals = {
     "Alabama"\n {"Capital"\n "Montgomery", "Flower"\n "Camellia", "Bird"\n "Northern Flicker (Yellowhammer)", "Date Added"\n "December 14, 1819", "Electoral Votes"\n 9, "Statehood Rank"\n 22},
     "Alaska"\n {"Capital"\n "Juneau", "Flower"\n "Forget-Me-Not", "Bird"\n "Willow Ptarmigan", "Date Added"\n "January 3, 1959", "Electoral Votes"\n 3, "Statehood Rank"\n 49},
     "Arizona"\n {"Capital"\n "Phoenix", "Flower"\n "Saguaro Cactus Blossom", "Bird"\n "Cactus Wren", "Date Added"\n "February 14, 1912", "Electoral Votes"\n 11, "Statehood Rank"\n 48},
