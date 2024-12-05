@@ -399,33 +399,116 @@ def math_quiz():
 ### Periodic table quiz
 def periodic_table_quiz():
     # Dictionary of elements with their symbols as keys and names as values
-    elements = { 
-        "H": "Hydrogen (1)", "He": "Helium (2)", "Li": "Lithium (3)", "Be": "Beryllium (4)", "B": "Boron (5)",
-        "C": "Carbon (6)", "N": "Nitrogen (7)", "O": "Oxygen (8)", "F": "Fluorine (9)", "Ne": "Neon (10)",
-        "Na": "Sodium (11)", "Mg": "Magnesium (12)", "Al": "Aluminum (13)", "Si": "Silicon (14)", "P": "Phosphorus (15)",
-        "S": "Sulfur (16)", "Cl": "Chlorine (17)", "Ar": "Argon (18)", "K": "Potassium (19)", "Ca": "Calcium (20)",
-        "Sc": "Scandium (21)", "Ti": "Titanium (22)", "V": "Vanadium (23)", "Cr": "Chromium (24)", "Mn": "Manganese (25)",
-        "Fe": "Iron (26)", "Co": "Cobalt (27)", "Ni": "Nickel (28)", "Cu": "Copper (29)", "Zn": "Zinc (30)",
-        "Ga": "Gallium (31)", "Ge": "Germanium (32)", "As": "Arsenic (33)", "Se": "Selenium (34)", "Br": "Bromine (35)",
-        "Kr": "Krypton (36)", "Rb": "Rubidium (37)", "Sr": "Strontium (38)", "Y": "Yttrium (39)", "Zr": "Zirconium (40)",
-        "Nb": "Niobium (41)", "Mo": "Molybdenum (42)", "Tc": "Technetium (43)", "Ru": "Ruthenium (44)", "Rh": "Rhodium (45)",
-        "Pd": "Palladium (46)", "Ag": "Silver (47)", "Cd": "Cadmium (48)", "In": "Indium (49)", "Sn": "Tin (50)",
-        "Sb": "Antimony (51)", "Te": "Tellurium (52)", "I": "Iodine (53)", "Xe": "Xenon (54)", "Cs": "Cesium (55)",
-        "Ba": "Barium (56)", "La": "Lanthanum (57)", "Ce": "Cerium (58)", "Pr": "Praseodymium (59)", "Nd": "Neodymium (60)",
-        "Pm": "Promethium (61)", "Sm": "Samarium (62)", "Eu": "Europium (63)", "Gd": "Gadolinium (64)", "Tb": "Terbium (65)",
-        "Dy": "Dysprosium (66)", "Ho": "Holmium (67)", "Er": "Erbium (68)", "Tm": "Thulium (69)", "Yb": "Ytterbium (70)",
-        "Lu": "Lutetium (71)", "Hf": "Hafnium (72)", "Ta": "Tantalum (73)", "W": "Tungsten (74)", "Re": "Rhenium (75)",
-        "Os": "Osmium (76)", "Ir": "Iridium (77)", "Pt": "Platinum (78)", "Au": "Gold (79)", "Hg": "Mercury (80)",
-        "Tl": "Thallium (81)", "Pb": "Lead (82)", "Bi": "Bismuth (83)", "Po": "Polonium (84)", "At": "Astatine (85)",
-        "Rn": "Radon (86)", "Fr": "Francium (87)", "Ra": "Radium (88)", "Ac": "Actinium (89)", "Th": "Thorium (90)",
-        "Pa": "Protactinium (91)", "U": "Uranium (92)", "Np": "Neptunium (93)", "Pu": "Plutonium (94)", "Am": "Americium (95)",
-        "Cm": "Curium (96)", "Bk": "Berkelium (97)", "Cf": "Californium (98)", "Es": "Einsteinium (99)", "Fm": "Fermium (100)",
-        "Md": "Mendelevium (101)", "No": "Nobelium (102)", "Lr": "Lawrencium (103)", "Rf": "Rutherfordium (104)", 
-        "Db": "Dubnium (105)", "Sg": "Seaborgium (106)", "Bh": "Bohrium (107)", "Hs": "Hassium (108)", "Mt": "Meitnerium (109)",
-        "Ds": "Darmstadtium (110)", "Rg": "Roentgenium (111)", "Cn": "Copernicium (112)", "Nh": "Nihonium (113)",
-        "Fl": "Flerovium (114)", "Mc": "Moscovium (115)", "Lv": "Livermorium (116)", "Ts": "Tennessine (117)", "Og": "Oganesson (118)"
-}
-
+    elements = {
+    "H": "Hydrogen (1) \n  Family: Nonmetal \n Electron Configuration: 1s1",
+    "He": "Helium (2) \n Family: Noble Gas \v Electron Configuration: 1s2",
+    "Li": "Lithium (3) \nFamily: Alkali Metal \nElectron Configuration: [He] 2s1",
+    "Be": "Beryllium (4) \nFamily: Alkaline Earth Metal \nElectron Configuration: [He] 2s2",
+    "B": "Boron (5) \nFamily: Metalloid \nElectron Configuration: [He] 2s2 2p1",
+    "C": "Carbon (6) \nFamily: Nonmetal \nElectron Configuration: [He] 2s2 2p2",
+    "N": "Nitrogen (7) \nFamily: Nonmetal \nElectron Configuration: [He] 2s2 2p3",
+    "O": "Oxygen (8) \nFamily: Nonmetal \nElectron Configuration: [He] 2s2 2p4",
+    "F": "Fluorine (9) \nFamily: Halogen \nElectron Configuration: [He] 2s2 2p5",
+    "Ne": "Neon (10) \nFamily: Noble Gas \nElectron Configuration: [He] 2s2 2p6",
+    "Na": "Sodium (11) \nFamily: Alkali Metal \nElectron Configuration: [Ne] 3s1",
+    "Mg": "Magnesium (12) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Ne] 3s2",
+    "Al": "Aluminum (13) \nFamily: Post-Transition Metal \nElectron Configuration: [Ne] 3s2 3p1",
+    "Si": "Silicon (14) \nFamily: Metalloid \nElectron Configuration: [Ne] 3s2 3p2",
+    "P": "Phosphorus (15) \nFamily: Nonmetal \nElectron Configuration: [Ne] 3s2 3p3",
+    "S": "Sulfur (16) \nFamily: Nonmetal \nElectron Configuration: [Ne] 3s2 3p4",
+    "Cl": "Chlorine (17) \nFamily: Halogen \nElectron Configuration: [Ne] 3s2 3p5",
+    "Ar": "Argon (18) \nFamily: Noble Gas \nElectron Configuration: [Ne] 3s2 3p6",
+    "K": "Potassium (19) \nFamily: Alkali Metal \nElectron Configuration: [Ar] 4s1",
+    "Ca": "Calcium (20) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Ar] 4s2",
+    "Sc": "Scandium (21) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d1 4s2",
+    "Ti": "Titanium (22) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d2 4s2",
+    "V": "Vanadium (23) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d3 4s2",
+    "Cr": "Chromium (24) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d5 4s1",
+    "Mn": "Manganese (25) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d5 4s2",
+    "Fe": "Iron (26) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d6 4s2",
+    "Co": "Cobalt (27) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d7 4s2",
+    "Ni": "Nickel (28) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d8 4s2",
+    "Cu": "Copper (29) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d10 4s1",
+    "Zn": "Zinc (30) \nFamily: Transition Metal \nElectron Configuration: [Ar] 3d10 4s2",
+    "Ga": "Gallium (31) \nFamily: Post-Transition Metal \nElectron Configuration: [Ar] 3d10 4s2 4p1",
+    "Ge": "Germanium (32) \nFamily: Metalloid \nElectron Configuration: [Ar] 3d10 4s2 4p2",
+    "As": "Arsenic (33) \nFamily: Metalloid \nElectron Configuration: [Ar] 3d10 4s2 4p3",
+    "Se": "Selenium (34) \nFamily: Nonmetal \nElectron Configuration: [Ar] 3d10 4s2 4p4",
+    "Br": "Bromine (35) \nFamily: Halogen \nElectron Configuration: [Ar] 3d10 4s2 4p5",
+    "Kr": "Krypton (36) \nFamily: Noble Gas \nElectron Configuration: [Ar] 3d10 4s2 4p6",
+    "Rb": "Rubidium (37) \nFamily: Alkali Metal \nElectron Configuration: [Kr] 5s1",
+    "Sr": "Strontium (38) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Kr] 5s2",
+    "Y": "Yttrium (39) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d1 5s2",
+    "Zr": "Zirconium (40) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d2 5s2",
+    "Nb": "Niobium (41) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d4 5s1",
+    "Mo": "Molybdenum (42) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d5 5s1",
+    "Tc": "Technetium (43) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d5 5s2",
+    "Ru": "Ruthenium (44) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d7 5s1",
+    "Rh": "Rhodium (45) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d8 5s1",
+    "Pd": "Palladium (46) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d10",
+    "Ag": "Silver (47) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d10 5s1",
+    "Cd": "Cadmium (48) \nFamily: Transition Metal \nElectron Configuration: [Kr] 4d10 5s2",
+    "In": "Indium (49) \nFamily: Post-Transition Metal \nElectron Configuration: [Kr] 4d10 5s2 5p1",
+    "Sn": "Tin (50) \nFamily: Post-Transition Metal \nElectron Configuration: [Kr] 4d10 5s2 5p2",
+    "Sb": "Antimony (51) \nFamily: Metalloid \nElectron Configuration: [Kr] 4d10 5s2 5p3",
+    "Te": "Tellurium (52) \nFamily: Metalloid \nElectron Configuration: [Kr] 4d10 5s2 5p4",
+    "I": "Iodine (53) \nFamily: Halogen \nElectron Configuration: [Kr] 4d10 5s2 5p5",
+    "Xe": "Xenon (54) \nFamily: Noble Gas \nElectron Configuration: [Kr] 4d10 5s2 5p6",
+    "Cs": "Cesium (55) \nFamily: Alkali Metal \nElectron Configuration: [Xe] 6s1",
+    "Ba": "Barium (56) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Xe] 6s2",
+    "La": "Lanthanum (57) \nFamily: Lanthanide \nElectron Configuration: [Xe] 5d1 6s2",
+    "Ce": "Cerium (58) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f1 5d1 6s2",
+    "Pr": "Praseodymium (59) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f3 6s2",
+    "Nd": "Neodymium (60) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f4 6s2",
+    "Pm": "Promethium (61) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f5 6s2",
+    "Sm": "Samarium (62) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f6 6s2",
+    "Eu": "Europium (63) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f7 6s2",
+    "Gd": "Gadolinium (64) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f7 5d1 6s2",
+    "Tb": "Terbium (65) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f9 6s2",
+    "Dy": "Dysprosium (66) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f10 6s2",
+    "Ho": "Holmium (67) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f11 6s2",
+    "Er": "Erbium (68) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f12 6s2",
+    "Tm": "Thulium (69) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f13 6s2",
+    "Yb": "Ytterbium (70) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f14 6s2",
+    "Lu": "Lutetium (71) \nFamily: Lanthanide \nElectron Configuration: [Xe] 4f14 5d1 6s2",
+    "Hf": "Hafnium (72) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d2 6s2",
+    "Ta": "Tantalum (73) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d3 6s2",
+    "W": "Tungsten (74) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d4 6s2",
+    "Re": "Rhenium (75) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d5 6s2",
+    "Os": "Osmium (76) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d6 6s2",
+    "Ir": "Iridium (77) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d7 6s2",
+    "Pt": "Platinum (78) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d9 6s1",
+    "Au": "Gold (79) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s1",
+    "Hg": "Mercury (80) \nFamily: Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2",
+    "Tl": "Thallium (81) \nFamily: Post-Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p1",
+    "Pb": "Lead (82) \nFamily: Post-Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p2",
+    "Bi": "Bismuth (83) \nFamily: Post-Transition Metal \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p3",
+    "Po": "Polonium (84) \nFamily: Metalloid \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p4",
+    "At": "Astatine (85) \nFamily: Metalloid \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p5",
+    "Rn": "Radon (86) \nFamily: Noble Gas \nElectron Configuration: [Xe] 4f14 5d10 6s2 6p6",
+    "Fr": "Francium (87) \nFamily: Alkali Metal \nElectron Configuration: [Rn] 7s1",
+    "Ra": "Radium (88) \nFamily: Alkaline Earth Metal \nElectron Configuration: [Rn] 7s2",
+    "Ac": "Actinium (89) \nFamily: Actinide \nElectron Configuration: [Rn] 6d1 7s2",
+    "Th": "Thorium (90) \nFamily: Actinide \nElectron Configuration: [Rn] 6d2 7s2",
+    "Pa": "Protactinium (91) \nFamily: Actinide \nElectron Configuration: [Rn] 5f2 6d1 7s2",
+    "U": "Uranium (92) \nFamily: Actinide \nElectron Configuration: [Rn] 5f3 6d1 7s2",
+    "Np": "Neptunium (93) \nFamily: Actinide \nElectron Configuration: [Rn] 5f4 6d1 7s2",
+    "Pu": "Plutonium (94) \nFamily: Actinide \nElectron Configuration: [Rn] 5f6 7s2",
+    "Am": "Americium (95) \nFamily: Actinide \nElectron Configuration: [Rn] 5f7 7s2",
+    "Cm": "Curium (96) \nFamily: Actinide \nElectron Configuration: [Rn] 5f7 6d1 7s2",
+    "Bk": "Berkelium (97) \nFamily: Actinide \nElectron Configuration: [Rn] 5f9 7s2",
+    "Cf": "Californium (98) \nFamily: Actinide \nElectron Configuration: [Rn] 5f10 7s2",
+    "Es": "Einsteinium (99) \nFamily: Actinide \nElectron Configuration: [Rn] 5f11 7s2",
+    "Fm": "Fermium (100) \nFamily: Actinide \nElectron Configuration: [Rn] 5f12 7s2",
+    "Md": "Mendelevium (101) \nFamily: Actinide \nElectron Configuration: [Rn] 5f13 7s2",
+    "No": "Nobelium (102) \nFamily: Actinide \nElectron Configuration: [Rn] 5f14 7s2",
+    "Lr": "Lawrencium (103) \nFamily: Actinide \nElectron Configuration: [Rn] 5f14 7s2 7p1",
+    "Rf": "Rutherfordium (104) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d2 7s2",
+    "Db": "Dubnium (105) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d3 7s2",
+    "Sg": "Seaborgium (106) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6", 
+    "Bh": "Bohrium (107) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d5 7s2", "Hs": "Hassium (108) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d6 7s2", "Mt": "Meitnerium (109) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d7 7s2", "Ds": "Darmstadtium (110) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d9 7s1", "Rg": "Roentgenium (111) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s1", "Cn": "Copernicium (112) \nFamily: Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2", "Nh": "Nihonium (113) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p1", "Fl": "Flerovium (114) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p2", "Mc": "Moscovium (115) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p3", "Lv": "Livermorium (116) \nFamily: Post-Transition Metal \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p4", "Ts": "Tennessine (117) \nFamily: Halogen \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p5", "Og": "Oganesson (118) \nFamily: Noble Gas \nElectron Configuration: [Rn] 5f14 6d10 7s2 7p6",
+	
+   }
    
     name = input("Enter your name: ").strip()
     correct = 0
@@ -442,12 +525,12 @@ def periodic_table_quiz():
             asked.clear()
 
         while True:
-            symbol, element_name = random.choice(all_questions)
+            symbol, element_description = random.choice(all_questions)
             if symbol not in asked:
                 asked.add(symbol)
                 break
 
-        answer = input(f"What is the symbol for this element '{element_name}'? ").strip().title()
+        answer = input(f"What is the symbol for this element?\nDescription: {element_description}\nYour answer: ").strip().title()
         if answer == symbol:
             print("Correct!")
             correct += 1
@@ -458,7 +541,6 @@ def periodic_table_quiz():
         print(f"Correct: {correct}, Wrong: {wrong}/10")
 
     print(f"\nGame over! You answered {correct} questions correctly before getting 10 wrong.")
-
 #amendments-quiz 
 def amendments_quiz():
     # Simple format for questions
