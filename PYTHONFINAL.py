@@ -1,8 +1,10 @@
 #Python Final Project
 ## Jeff Loula
 
-
+import os
+from datetime import datetime
 import random
+
 # Function to print "GET READY TO GAME"
 def print_game_message():
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")  
@@ -144,6 +146,13 @@ def tic_tac_toe():
         if not get_available_moves(board):
             print_board(board)
             print("It's a draw!")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~  ~~~~~  ~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~ ~~~ ~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~  ~~     ~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~~~  ~~~~~  ~~~  ~~~ ~~~~~~~  ~~~~ ~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~  ~~  ~~~~ ~~~ ~~~~ ~~~~~  ~~  ~~~~ ~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~~~  ~~~~~~~   ~~~~~    ~~~~  ~~~~  ~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             break
         # Computer's turn
         comp_move = computer_move(board)
@@ -152,10 +161,24 @@ def tic_tac_toe():
         if check_winner(board, computer):
             print_board(board)
             print(f"Computer ({computer}) wins!")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~  ~~~~~  ~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~ ~~~ ~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~  ~~     ~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~~~  ~~~~~  ~~~  ~~~ ~~~~~~~  ~~~~ ~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~  ~~  ~~~~ ~~~ ~~~~ ~~~~~  ~~  ~~~~ ~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~~~  ~~~~~~~   ~~~~~    ~~~~  ~~~~  ~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             break
         if not get_available_moves(board):
             print_board(board)
             print("It's a draw!")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~  ~~~~~  ~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~ ~~~ ~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~  ~~     ~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~~~  ~~~~~  ~~~  ~~~ ~~~~~~~  ~~~~ ~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~  ~~  ~~~~ ~~~ ~~~~ ~~~~~  ~~  ~~~~ ~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~ ~~~~~~~  ~~~~~~~   ~~~~~    ~~~~  ~~~~  ~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             break
 # OCEAN Personality Test
 def ocean_test():
@@ -252,30 +275,63 @@ def ocean_test():
         f"Agreeableness (A): {A}\n"
         f"Neuroticism (N): {N}\n"
     )
-
     # Display results
     print("\nYour Personality Scores:")
     print(results)
 
-    # Save results to file
-    filename = f"{name}_ocean_results.txt"
+    # Save results to file in the same directory as the script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    sanitized_name = "".join(c for c in name if c.isalnum() or c in " _-").strip()  # Clean name for filename
+    filename = os.path.join(script_dir, f"{sanitized_name}_ocean_results.txt")
+
     with open(filename, "w") as file:
-        file.write(f"Personality Test Results for {name}:\n")
+        file.write(f"Personality Test Results for {name}:\n\n")
         file.write(results)
+        file.write("https://openpsychometrics.org/tests/IPIP-BFFM/results.php")
     
-    print(f"Your results have been saved in the file: {filename}")
+    print(f"\nYour results have been saved in the file: {filename}")
+    print ("https://openpsychometrics.org/tests/IPIP-BFFM/results.php")
 
+## Math Game
+import os
+from datetime import datetime
+import random
 
-# Math Quiz Game
 def math_quiz():
+    print("Welcome to the Math Quiz!")
+    name = input("Enter your name: ").strip()
+    
+    # Validate difficulty level input
+    while True:
+        try:
+            difficulty = int(input("Select difficulty level (1 - Easy, 2 - Medium, 3 - Hard): "))
+            if difficulty not in [1, 2, 3]:
+                raise ValueError("Difficulty must be 1, 2, or 3.")
+            break
+        except ValueError as e:
+            print(f"Invalid input: {e}. Please try again.")
+
     score = 0
     operations = ['+', '-', '*', '/', 'algebra']
-    
-    for i in range(5):
-        num1 = random.randint(1, 100)
-        num2 = random.randint(1, 100)
+    results = []
+
+    # Number of questions
+    num_questions = 5
+    for i in range(1, num_questions + 1):
+        # Generate random numbers based on difficulty level
+        if difficulty == 1:  # Easy
+            num1 = random.randint(1, 10)
+            num2 = random.randint(1, 10)
+        elif difficulty == 2:  # Medium
+            num1 = random.randint(10, 50)
+            num2 = random.randint(10, 50)
+        else:  # Hard
+            num1 = random.randint(50, 200)
+            num2 = random.randint(50, 200)
+
         operation = random.choice(operations)
-        
+
+        # Generate a question and the correct answer
         if operation == '+':
             correct_answer = num1 + num2
             question = f"What is {num1} + {num2}?"
@@ -286,115 +342,160 @@ def math_quiz():
             correct_answer = num1 * num2
             question = f"What is {num1} * {num2}?"
         elif operation == '/':
-            num1, num2 = max(num1, num2), min(num1, num2)
-            while num2 == 0:  # Avoid division by zero
-                num2 = random.randint(1, 100)
+            num1 = num1 * num2  # Ensure num1 is a multiple of num2 for integer division
             correct_answer = num1 // num2
-            question = f"What is {num1} // {num2}?"
-        else:  # algebra
+            question = f"What is {num1} / {num2} (integer division)?"
+        elif operation == 'algebra':
             x = random.randint(1, 10)
             coefficient = random.randint(1, 10)
             constant = random.randint(1, 10)
-            if random.choice([True, False]):
-                correct_answer = (constant - num2) // coefficient
-                question = f"Solve for x: {coefficient}x + {num2} = {constant}"
-            else:
-                correct_answer = (constant + num2) // coefficient
-                question = f"Solve for x: {coefficient}x - {num2} = {constant}"
-        
-        print(f"Question {i + 1}: {question}")
-        answer = int(input("Your answer: "))
+            num2 = coefficient * x + constant
+            correct_answer = x
+            question = f"Solve for x: {coefficient}x + {constant} = {num2}"
+
+        # Display question and get user answer
+        print(f"\nQuestion {i}: {question}")
+        while True:
+            try:
+                answer = int(input("Your answer: "))
+                break
+            except ValueError:
+                print("Invalid input! Please enter a whole number.")
+
+        # Check if the answer is correct
         if answer == correct_answer:
             print("Correct!")
             score += 1
+            results.append(f"Question {i}: {question} - Your Answer: {answer} - Correct")
         else:
             print(f"Wrong! The correct answer was {correct_answer}.")
+            results.append(f"Question {i}: {question} - Your Answer: {answer} - Correct Answer: {correct_answer}")
+
+    # Display the final score
+    print(f"\nYour total score is {score}/{num_questions}.")
+    results.append(f"Final Score: {score}/{num_questions}")
+
+    # Display the detailed results
+    print("\nDetailed Results:")
+    for result in results:
+        print(result)
+
+    # Save the results to a file named after the player
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    sanitized_name = "".join(c for c in name if c.isalnum() or c in " _-").strip()  # Clean the name for a valid filename
+    filename = os.path.join(script_dir, f"{sanitized_name}_math_quiz_results.txt")
+
+    # Save the results to a file
+    with open(filename, "w") as file:
+        file.write(f"Math Quiz Results for {name}\n")
+        file.write(f"Score: {score}/{num_questions}\n\n")
+        file.write("Detailed Results:\n")
+        for result in results:
+            file.write(f"{result}\n")
     
-    print(f"Your total score is {score}/5.")
+    print(f"\nYour results have been saved in the file: {filename}")
+    print("Thank you for playing the Math Quiz!")
 
-#periodic_table-quiz
-
+### Periodic table quiz
 def periodic_table_quiz():
     # Dictionary of elements with their symbols as keys and names as values
-    elements = {
-        "H": "Hydrogen", "He": "Helium", "Li": "Lithium", "Be": "Beryllium", "B": "Boron",
-        "C": "Carbon", "N": "Nitrogen", "O": "Oxygen", "F": "Fluorine", "Ne": "Neon",
-        "Na": "Sodium", "Mg": "Magnesium", "Al": "Aluminum", "Si": "Silicon", "P": "Phosphorus",
-        "S": "Sulfur", "Cl": "Chlorine", "Ar": "Argon", "K": "Potassium", "Ca": "Calcium",
-        "Sc": "Scandium", "Ti": "Titanium", "V": "Vanadium", "Cr": "Chromium", "Mn": "Manganese",
-        "Fe": "Iron", "Co": "Cobalt", "Ni": "Nickel", "Cu": "Copper", "Zn": "Zinc",
-        "Ga": "Gallium", "Ge": "Germanium", "As": "Arsenic", "Se": "Selenium", "Br": "Bromine",
-        "Kr": "Krypton", "Rb": "Rubidium", "Sr": "Strontium", "Y": "Yttrium", "Zr": "Zirconium",
-        "Nb": "Niobium", "Mo": "Molybdenum", "Tc": "Technetium", "Ru": "Ruthenium", "Rh": "Rhodium",
-        "Pd": "Palladium", "Ag": "Silver", "Cd": "Cadmium", "In": "Indium", "Sn": "Tin",
-        "Sb": "Antimony", "Te": "Tellurium", "I": "Iodine", "Xe": "Xenon", "Cs": "Cesium",
-        "Ba": "Barium", "La": "Lanthanum", "Ce": "Cerium", "Pr": "Praseodymium", "Nd": "Neodymium",
-        "Pm": "Promethium", "Sm": "Samarium", "Eu": "Europium", "Gd": "Gadolinium", "Tb": "Terbium",
-        "Dy": "Dysprosium", "Ho": "Holmium", "Er": "Erbium", "Tm": "Thulium", "Yb": "Ytterbium",
-        "Lu": "Lutetium", "Hf": "Hafnium", "Ta": "Tantalum", "W": "Tungsten", "Re": "Rhenium",
-        "Os": "Osmium", "Ir": "Iridium", "Pt": "Platinum", "Au": "Gold", "Hg": "Mercury",
-        "Tl": "Thallium", "Pb": "Lead", "Bi": "Bismuth", "Po": "Polonium", "At": "Astatine",
-        "Rn": "Radon", "Fr": "Francium", "Ra": "Radium", "Ac": "Actinium", "Th": "Thorium",
-        "Pa": "Protactinium", "U": "Uranium", "Np": "Neptunium", "Pu": "Plutonium", "Am": "Americium",
-        "Cm": "Curium", "Bk": "Berkelium", "Cf": "Californium", "Es": "Einsteinium", "Fm": "Fermium",
-        "Md": "Mendelevium", "No": "Nobelium", "Lr": "Lawrencium", "Rf": "Rutherfordium", 
-        "Db": "Dubnium", "Sg": "Seaborgium", "Bh": "Bohrium", "Hs": "Hassium", "Mt": "Meitnerium",
-        "Ds": "Darmstadtium", "Rg": "Roentgenium", "Cn": "Copernicium", "Nh": "Nihonium",
-        "Fl": "Flerovium", "Mc": "Moscovium", "Lv": "Livermorium", "Ts": "Tennessine", "Og": "Oganesson"
-    }
+    elements = { 
+        "H": "Hydrogen (1)", "He": "Helium (2)", "Li": "Lithium (3)", "Be": "Beryllium (4)", "B": "Boron (5)",
+        "C": "Carbon (6)", "N": "Nitrogen (7)", "O": "Oxygen (8)", "F": "Fluorine (9)", "Ne": "Neon (10)",
+        "Na": "Sodium (11)", "Mg": "Magnesium (12)", "Al": "Aluminum (13)", "Si": "Silicon (14)", "P": "Phosphorus (15)",
+        "S": "Sulfur (16)", "Cl": "Chlorine (17)", "Ar": "Argon (18)", "K": "Potassium (19)", "Ca": "Calcium (20)",
+        "Sc": "Scandium (21)", "Ti": "Titanium (22)", "V": "Vanadium (23)", "Cr": "Chromium (24)", "Mn": "Manganese (25)",
+        "Fe": "Iron (26)", "Co": "Cobalt (27)", "Ni": "Nickel (28)", "Cu": "Copper (29)", "Zn": "Zinc (30)",
+        "Ga": "Gallium (31)", "Ge": "Germanium (32)", "As": "Arsenic (33)", "Se": "Selenium (34)", "Br": "Bromine (35)",
+        "Kr": "Krypton (36)", "Rb": "Rubidium (37)", "Sr": "Strontium (38)", "Y": "Yttrium (39)", "Zr": "Zirconium (40)",
+        "Nb": "Niobium (41)", "Mo": "Molybdenum (42)", "Tc": "Technetium (43)", "Ru": "Ruthenium (44)", "Rh": "Rhodium (45)",
+        "Pd": "Palladium (46)", "Ag": "Silver (47)", "Cd": "Cadmium (48)", "In": "Indium (49)", "Sn": "Tin (50)",
+        "Sb": "Antimony (51)", "Te": "Tellurium (52)", "I": "Iodine (53)", "Xe": "Xenon (54)", "Cs": "Cesium (55)",
+        "Ba": "Barium (56)", "La": "Lanthanum (57)", "Ce": "Cerium (58)", "Pr": "Praseodymium (59)", "Nd": "Neodymium (60)",
+        "Pm": "Promethium (61)", "Sm": "Samarium (62)", "Eu": "Europium (63)", "Gd": "Gadolinium (64)", "Tb": "Terbium (65)",
+        "Dy": "Dysprosium (66)", "Ho": "Holmium (67)", "Er": "Erbium (68)", "Tm": "Thulium (69)", "Yb": "Ytterbium (70)",
+        "Lu": "Lutetium (71)", "Hf": "Hafnium (72)", "Ta": "Tantalum (73)", "W": "Tungsten (74)", "Re": "Rhenium (75)",
+        "Os": "Osmium (76)", "Ir": "Iridium (77)", "Pt": "Platinum (78)", "Au": "Gold (79)", "Hg": "Mercury (80)",
+        "Tl": "Thallium (81)", "Pb": "Lead (82)", "Bi": "Bismuth (83)", "Po": "Polonium (84)", "At": "Astatine (85)",
+        "Rn": "Radon (86)", "Fr": "Francium (87)", "Ra": "Radium (88)", "Ac": "Actinium (89)", "Th": "Thorium (90)",
+        "Pa": "Protactinium (91)", "U": "Uranium (92)", "Np": "Neptunium (93)", "Pu": "Plutonium (94)", "Am": "Americium (95)",
+        "Cm": "Curium (96)", "Bk": "Berkelium (97)", "Cf": "Californium (98)", "Es": "Einsteinium (99)", "Fm": "Fermium (100)",
+        "Md": "Mendelevium (101)", "No": "Nobelium (102)", "Lr": "Lawrencium (103)", "Rf": "Rutherfordium (104)", 
+        "Db": "Dubnium (105)", "Sg": "Seaborgium (106)", "Bh": "Bohrium (107)", "Hs": "Hassium (108)", "Mt": "Meitnerium (109)",
+        "Ds": "Darmstadtium (110)", "Rg": "Roentgenium (111)", "Cn": "Copernicium (112)", "Nh": "Nihonium (113)",
+        "Fl": "Flerovium (114)", "Mc": "Moscovium (115)", "Lv": "Livermorium (116)", "Ts": "Tennessine (117)", "Og": "Oganesson (118)"
+}
 
-    score = 0
+   
+    name = input("Enter your name: ").strip()
+    correct = 0
+    wrong = 0
+    asked = set()
+    all_questions = list(elements.items())
+
     print("\nWelcome to the Periodic Table Quiz!")
-    print("You will be given 5 questions. Try to name the element based on its symbol.\n")
+    print("You will answer questions until you get 10 wrong answers.")
 
-    for _ in range(5):  # Ask 5 random questions
-        symbol, name = random.choice(list(elements.items()))
-        answer = input(f"What is the element with the symbol '{symbol}'? ").strip().title()
-        if answer == name:
+    while wrong < 10:
+        if len(asked) == len(all_questions):  # Reset if all questions have been asked
+            print("\nYou've gone through all the elements. Repeating questions now.")
+            asked.clear()
+
+        while True:
+            symbol, element_name = random.choice(all_questions)
+            if symbol not in asked:
+                asked.add(symbol)
+                break
+
+        answer = input(f"What is the symbol for this element '{element_name}'? ").strip().title()
+        if answer == symbol:
             print("Correct!")
-            score += 1
+            correct += 1
         else:
-            print(f"Wrong! The correct answer is {name}.")
+            print(f"Wrong! The correct answer is {symbol}.")
+            wrong += 1
 
-    print(f"\nYour final score: {score}/5")
-    if score == 5:
-        print("Excellent work! You know your elements!")
-    elif score >= 3:
-        print("Good job! Keep practicing.")
-    else:
-        print("Keep studying the periodic table!")
-    
-    
+        print(f"Correct: {correct}, Wrong: {wrong}/10")
+
+    print(f"\nGame over! You answered {correct} questions correctly before getting 10 wrong.")
+
 #amendments-quiz 
 def amendments_quiz():
     # Dictionary of amendments with their number as keys and descriptions as values
     amendments = {
-        1: "Freedom of speech, religion, press, assembly, and petition",
-        2: "Right to keep and bear arms",
-        3: "No quartering of soldiers in private homes without consent",
-        4: "Protection against unreasonable searches and seizures",
-        5: "Protection against self-incrimination, double jeopardy; guarantees due process",
-        6: "Right to a speedy and public trial by an impartial jury",
-        7: "Right to trial by jury in civil cases",
-        8: "Protection against cruel and unusual punishment",
-        9: "Rights retained by the people, even if not specifically enumerated in the Constitution",
-        10: "Powers not delegated to the federal government are reserved to the states or the people",
-        13: "Abolition of slavery",
-        14: "Equal protection under the law and due process for all citizens",
-        15: "Right to vote cannot be denied based on race, color, or previous servitude",
-        16: "Congress can levy an income tax",
-        18: "Prohibition of alcohol (repealed by the 21st Amendment)",
-        19: "Women's right to vote",
-        21: "Repeal of Prohibition (18th Amendment)",
-        22: "Limits the President to two terms in office",
-        26: "Voting age lowered to 18"
-    }
+    1: "Freedom of speech, religion, press, assembly, and petition",
+    2: "Right to keep and bear arms",
+    3: "No quartering of soldiers in private homes without consent",
+    4: "Protection against unreasonable searches and seizures",
+    5: "Protection against self-incrimination, double jeopardy; guarantees due process",
+    6: "Right to a speedy and public trial by an impartial jury",
+    7: "Right to trial by jury in civil cases",
+    8: "Protection against cruel and unusual punishment",
+    9: "Rights retained by the people, even if not specifically enumerated in the Constitution",
+    10: "Powers not delegated to the federal government are reserved to the states or the people",
+    11: "Limits lawsuits against states",
+    12: "Revises presidential election procedures",
+    13: "Abolition of slavery",
+    14: "Equal protection under the law and due process for all citizens",
+    15: "Right to vote cannot be denied based on race, color, or previous servitude",
+    16: "Congress can levy an income tax",
+    17: "Establishes the direct election of U.S. Senators by popular vote",
+    18: "Prohibition of alcohol (repealed by the 21st Amendment)",
+    19: "Women's right to vote",
+    20: "Changes the dates of congressional and presidential terms",
+    21: "Repeal of Prohibition (18th Amendment)",
+    22: "Limits the President to two terms in office",
+    23: "Gives residents of Washington D.C. the right to vote for representatives in the Electoral College",
+    24: "Abolishes poll taxes",
+    25: "Addresses presidential succession and disability",
+    26: "Voting age lowered to 18",
+    27: "Delays laws affecting Congressional salary from taking effect until after the next election of representatives"
+}
 
     score = 0
     print("\nWelcome to the Amendments Quiz!")
-    print("You will be given 5 descriptions of amendments. Your task is to enter the amendment number that matches the description.\n")
-
-    for _ in range(5):  # Ask 5 random questions
+    print("You will be given 10 descriptions of amendments. Your task is to enter the amendment number that matches the description.\n")
+    for _ in range(10):  # Ask 10 random questions
         amendment, description = random.choice(list(amendments.items()))
         try:
             answer = int(input(f"Which amendment is described as: \"{description}\"? Enter the amendment number: "))
@@ -405,18 +506,17 @@ def amendments_quiz():
                 print(f"Wrong! The correct answer is Amendment {amendment}.")
         except ValueError:
             print("Invalid input! Please enter a number.")
-
-    print(f"\nYour final score: {score}/5")
-    if score == 5:
+    print(f"\nYour final score: {score}/10")
+    if score == 10:
         print("Excellent! You know your amendments well!")
-    elif score >= 3:
+    elif score >= 7:
         print("Good job! A little more study and you'll be a pro.")
     else:
         print("Keep learning! The Constitution is worth knowing.")
-
-
 #state capitals quiz
+
 def states_capitals_quiz():
+    
     # Dictionary of U.S. states and their capitals
     states_and_capitals = {
         "Alabama": "Montgomery", "Alaska": "Juneau", "Arizona": "Phoenix", "Arkansas": "Little Rock",
@@ -433,12 +533,10 @@ def states_capitals_quiz():
         "Vermont": "Montpelier", "Virginia": "Richmond", "Washington": "Olympia", "West Virginia": "Charleston",
         "Wisconsin": "Madison", "Wyoming": "Cheyenne"
     }
-
     score = 0
     print("\nWelcome to the States and Capitals Quiz!")
     print("You will be given 5 questions. Try to match states with their capitals or vice versa.\n")
-
-    for _ in range(5):  # Ask 5 random questions
+    for _ in range(10):  # Ask 10 random questions
         if random.choice([True, False]):
             # Ask for the capital of a state
             state, capital = random.choice(list(states_and_capitals.items()))
@@ -457,17 +555,13 @@ def states_capitals_quiz():
                 score += 1
             else:
                 print(f"Wrong! {capital} is the capital of {state}.")
-
-    print(f"\nYour final score: {score}/5")
+    print(f"\nYour final score: {score}/10")
     if score == 5:
         print("Excellent! You know your states and capitals!")
     elif score >= 3:
         print("Good job! A little more practice and you'll master it.")
     else:
         print("Keep practicing! You'll get there.")
-
-
-
     
 # Main Program
 def main():
